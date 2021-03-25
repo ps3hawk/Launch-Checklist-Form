@@ -67,7 +67,7 @@ window.addEventListener("load", function() {
      event.preventDefault();
       }
 
-      if (cargoMass.value > 10000 && fuelLevel.value > 10000) {
+      if (cargoMass.value > 10000 && fuelLevel.value > 9999) {
          launchStatus.style.color = "red";
          launchStatus.innerHTML = `Shuttle not ready for launch`;
          faultyItems.style.visibility = "visible";
@@ -95,19 +95,19 @@ window.addEventListener("load", function() {
      event.preventDefault();
       };
 
-   //    if (cargoMass.value && fuelLevel.value && pilotName.value && copilotName.value){
-   //       launchStatus.style.color = "green";
-   //       launchStatus.innerHTML = `Shuttle is ready for launch!`;
-   //       faultyItems.style.visibility = "visible";
-   //       faultyItems.innerHTML = `
-   //       <ol>
-   //       <li id="pilotStatus">Pilot ${pilotName.value} is ready for launch!</li>
-   //       <li id="copilotStatus">Copilot ${copilotName.value} is ready for launch!</li>
-   //       <li id="fuelStatus">Fuel level ready for launch!</li>
-   //       <li id="cargoStatus">Cargo mass low enough for launch!</li>
-   //   </ol>`;
-   //   event.preventDefault();
-   //    };
+      if (cargoMass.value < 10000 && fuelLevel.value > 9999 ) {
+         launchStatus.style.color = "green";
+         launchStatus.innerHTML = `Shuttle is ready for launch!`;
+         faultyItems.style.visibility = "visible";
+         faultyItems.innerHTML = `
+         <ol>
+         <li id="pilotStatus">Pilot ${pilotName.value} is ready for launch!</li>
+         <li id="copilotStatus">Copilot ${copilotName.value} is ready for launch!</li>
+         <li id="fuelStatus">Fuel level ready for launch!</li>
+         <li id="cargoStatus">Cargo mass low enough for launch!</li>
+     </ol>`;
+     event.preventDefault();
+      };
 
 
 
